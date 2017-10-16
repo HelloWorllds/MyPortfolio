@@ -4,7 +4,7 @@
 
 $text-color: #333
 $dark-color: #000
-$red-color: #9B1818
+$red-color: #de0000
 $blue-color: #2c3e50
 $green-color: #67bc5c
 $orange-color: #e87e04
@@ -323,13 +323,61 @@ body textarea:required:valid
 .main-container__content
 	width: 100%
 	height: calc(100% - 170px)
-	border: 1px solid red
+	border-radius: 20px
+	overflow: hidden
+	background-color: #fff
 
 .main-container__item_about
+	.main-container__top-block
+		width: 100%
+		height: auto
+		padding: 15px 0
+		background-color: $red-color
+		h3
+			margin: 0
+			font-size: 40px
+			text-transform: uppercase
+			letter-spacing: 10px
+		span
+			font-size: 25px
+			text-transform: lowercase
+			letter-spacing: 5px
+	.main-container__middle-block
+		width: 100%
+		height: calc(100% - 200px)
+		padding: 50px 20px
+		color: $text-color
+		background-color: #fff
+		h2
+			margin: 0
+			margin-bottom: 25px
+			font-size: 40px
+			letter-spacing: 1px
+		p
+			margin: 0
+	.main-container__bottom-block
+		width: 100%
+		height: 75px
+		background-color: $red-color
+	.main-container__image
+		width: 150px
+		height: 150px
+		margin: 0 auto
+		border-radius: 50%
+		background-color: #586b4f
+		background-image: url(../images/photo.png)
+		background-position: 50%
+		background-repeat: no-repeat
+		background-size: cover
+
 .main-container__item_expirience
+
 .main-container__item_skills
+
 .main-container__item_portfolio
+
 .main-container__item_contacts
+
 
 @keyframes main-container-move
 	0%
