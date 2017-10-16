@@ -16,6 +16,8 @@ $(document).ready(function() {
 			$('.menu').toggleClass('menu_active');
 			$('.main-container').toggleClass('main-container_active');
 			$('.main-container__item').removeClass('main-container__item_active');
+			$('.menu__menu-name').removeClass('menu__menu-name_active');
+			$('.menu__menu-pic').removeClass('menu__menu-pic_active');
 		});
 
 	//SVG Fallback
@@ -32,6 +34,10 @@ $(document).ready(function() {
 			var contHeader = $('.main-container__header').text();
 
 			_this.click(function() {
+				$('.menu__menu-name').removeClass('menu__menu-name_active');
+				$('.menu__menu-pic').removeClass('menu__menu-pic_active');
+				_this.find('.menu__menu-name').addClass('menu__menu-name_active');
+				_this.find('.menu__menu-pic').addClass('menu__menu-pic_active');
 				switch(btnName.toLowerCase()) {
 					case 'about':
 						$('.main-container__item').removeClass('main-container__item_active');
