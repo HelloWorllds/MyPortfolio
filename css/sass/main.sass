@@ -381,15 +381,15 @@ body textarea:required:valid
 	.main-container__content
 		padding: 25px 0
 		text-align: left
-		background-color: $blue-color
 
 .main-container__work-item
 	position: relative
-	width: 70%
+	width: 75%
 	height: 100px
 	margin: 25px 50px
 	padding: 30px 50px
 	border-radius: 20px
+	text-align: center
 	&:after
 		content: ''
 		position: absolute
@@ -397,14 +397,59 @@ body textarea:required:valid
 		width: 100%
 		height: 1px
 		clear: both
+	&:hover
+		.work-item__hidden-block
+			display: block
+			animation: hidden-block-move 0.5s
+			animation-fill-mode: forwards
+
+.work-item__hidden-block
+	position: absolute
+	display: none
+	bottom: -35px
+	width: 250px
+	height: auto
+	padding: 15px 10px
+	border-radius: 15px
+	text-align: left
+	transform: translateY(100%)
+	z-index: 9
+	&:before
+		content: ''
+		position: absolute
+		display: block
+		top: -38px
+		left: 50%
+		margin-left: -20px
+		border: 20px solid transparent
+		background-color: transparent
+	h4
+		font-size: 18px
+		text-align: center
 
 .main-container__work-item_apelsun
 	float: left
 	background-color: #ff6600
+	.work-item__hidden-block
+		right: 0
+		background-color: inherit
+		&:before
+			border-bottom: 20px solid #ff6600
 
-.main-container__work-item_apelsun-test
+.main-container__work-item_freelance
 	float: right
 	background-color: #cc0099
+	.work-item__hidden-block
+		left: 0
+		background-color: inherit
+		&:before
+			border-bottom: 20px solid #cc0099
+
+@keyframes hidden-block-move
+	0%
+		bottom: -15px
+	100%
+		bottom: -35px
 
 .main-container__tag
 	display: inline-block
