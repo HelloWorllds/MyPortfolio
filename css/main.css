@@ -24,30 +24,11 @@ html, body {
   overflow-x: hidden;
 }
 
-p strong {
-  font-family: 'RobotoBold', sans-serif;
-  font-weight: normal;
-}
-
-body input:focus:required:invalid,
-body textarea:focus:required:invalid {
-  color: #de0000;
-  outline: none;
-  box-shadow: #de0000 0 0 4px 2px;
-  border-radius: 3px;
-  border-color: #de0000;
-}
-
-body input:required:valid,
-body textarea:required:valid {
-  color: #67bc5c;
-  outline: none;
-  box-shadow: #67bc5c 0 0 4px 2px;
-  border-radius: 3px;
-  border-color: #67bc5c;
-}
-
 .hidden {
+  display: none;
+}
+
+.preloader-container {
   display: none;
 }
 
@@ -628,8 +609,8 @@ body textarea:required:valid {
   position: relative;
   width: 75%;
   height: 100px;
-  margin: 25px 50px;
-  padding: 30px 50px;
+  margin: 25px 20px;
+  padding: 30px 20px;
   border-radius: 20px;
   text-align: center;
 }
@@ -777,6 +758,193 @@ body textarea:required:valid {
   margin: 0;
   font-size: 18px;
   font-weight: normal;
+}
+
+.skills-item {
+  position: relative;
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  margin: 30px;
+  border-radius: 50%;
+  text-align: center;
+  overflow: hidden;
+  -webkit-transition: all 0.5s;
+          transition: all 0.5s;
+  vertical-align: middle;
+}
+
+.skills-item:hover {
+  -webkit-transform: scale(1.3);
+      -ms-transform: scale(1.3);
+          transform: scale(1.3);
+  -webkit-transition: all 0.5s;
+          transition: all 0.5s;
+}
+
+.skills-item-html {
+  background-color: rgba(227, 79, 38, 0.3);
+}
+
+.skills-item-html .skills-item__overlay {
+  background-color: #e34f26;
+}
+
+.skills-item-html .skills-item__percent:after {
+  content: 'html';
+  color: #7a2710;
+}
+
+.skills-item-css {
+  background-color: rgba(41, 101, 241, 0.3);
+}
+
+.skills-item-css .skills-item__overlay {
+  background-color: #2965f1;
+}
+
+.skills-item-css .skills-item__percent:after {
+  content: 'css';
+  color: #093291;
+}
+
+.skills-item-jquery {
+  background-color: rgba(122, 206, 244, 0.3);
+}
+
+.skills-item-jquery .skills-item__overlay {
+  background-color: #7acef4;
+}
+
+.skills-item-jquery .skills-item__percent:after {
+  content: 'jquery';
+  color: #129ddc;
+}
+
+.skills-item-js {
+  background-color: rgba(247, 223, 30, 0.3);
+}
+
+.skills-item-js .skills-item__overlay {
+  background-color: #f7df1e;
+}
+
+.skills-item-js .skills-item__percent:after {
+  content: 'js';
+  color: #908105;
+}
+
+.skills-item-less {
+  background-color: rgba(42, 79, 132, 0.3);
+}
+
+.skills-item-less .skills-item__overlay {
+  background-color: #2a4f84;
+}
+
+.skills-item-less .skills-item__percent:after {
+  content: 'less';
+  color: #0b1523;
+}
+
+.skills-item-sass {
+  background-color: rgba(205, 102, 154, 0.3);
+}
+
+.skills-item-sass .skills-item__overlay {
+  background-color: #cd669a;
+}
+
+.skills-item-sass .skills-item__percent:after {
+  content: 'sass';
+  color: #872c5a;
+}
+
+.skills-item-git {
+  background-color: rgba(110, 84, 148, 0.3);
+}
+
+.skills-item-git .skills-item__overlay {
+  background-color: #6e5494;
+}
+
+.skills-item-git .skills-item__percent:after {
+  content: 'git';
+  color: #322643;
+}
+
+.skills-item-php {
+  background-color: rgba(136, 146, 190, 0.3);
+}
+
+.skills-item-php .skills-item__overlay {
+  background-color: #8892be;
+}
+
+.skills-item-php .skills-item__percent:after {
+  content: 'php';
+  color: #465180;
+}
+
+.skills-item-csharp {
+  background-color: rgba(105, 0, 129, 0.3);
+}
+
+.skills-item-csharp .skills-item__overlay {
+  background-color: #690081;
+}
+
+.skills-item-csharp .skills-item__percent:after {
+  content: 'c#';
+  color: #010001;
+}
+
+.skills-item-bem {
+  background-color: rgba(42, 232, 151, 0.3);
+}
+
+.skills-item-bem .skills-item__overlay {
+  background-color: #2ae897;
+}
+
+.skills-item-bem .skills-item__percent:after {
+  content: 'bem';
+  color: #0e8452;
+}
+
+.skills-item__percent {
+  position: absolute;
+  display: block;
+  top: 50%;
+  left: 50%;
+  font-size: 30px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 9;
+}
+
+.skills-item__percent:after {
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  font-size: 22px;
+  font-weight: bold;
+  -webkit-transform: translate(-50%, 0);
+      -ms-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+}
+
+.skills-item__overlay {
+  position: absolute;
+  bottom: -1px;
+  left: -5px;
+  right: -5px;
+  width: -webkit-calc(100% + 10px);
+  width: calc(100% + 10px);
+  height: 0%;
 }
 
 @-webkit-keyframes main-container-move {

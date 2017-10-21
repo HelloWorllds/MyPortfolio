@@ -64,6 +64,31 @@ $(document).ready(function() {
 				}
 			});
 		});
+
+	//slills
+		$('.skills-item').each(function() {
+			var _this = $(this);
+			var percent = _this.data('percent');
+			var spanPer = _this.find('.skills-item__percent');
+			var overlay = _this.find('.skills-item__overlay');
+			
+			spanPer.text(percent.toString() + '%');
+
+			overlay.css('height', percent + '%');
+
+			if (percent == 50) {
+				_this.css('width', '120px');
+				_this.css('height', '120px');
+			} else if (percent > 50) {
+				var size = 100 + (percent * percent / 100);
+				_this.css('width', size + 'px');
+				_this.css('height', size + 'px');
+			} else {
+				var size = 115 - (percent * percent / 100);
+				_this.css('width', size + 'px');
+				_this.css('height', size + 'px');
+			}
+		});
 });
 
 // $(window).load(function() {

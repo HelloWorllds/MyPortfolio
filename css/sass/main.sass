@@ -9,6 +9,18 @@ $blue-color: #2c3e50
 $green-color: #67bc5c
 $orange-color: #e87e04
 
+//skills colors
+$html-color: #e34f26
+$css-color: #2965f1
+$jquery-color: #7acef4
+$js-color: #f7df1e
+$less-color: #2a4f84
+$sass-color: #cd669a
+$git-color: #6e5494
+$php-color: #8892be
+$csharp-color: #690081
+$bem-color: #2ae897
+
 *
 	box-sizing: border-box
 
@@ -30,26 +42,10 @@ html, body
 	-webkit-font-smoothing: antialised
 	overflow-x: hidden
 
-p strong
-	font-family: 'RobotoBold', sans-serif
-	font-weight: normal
-
-body input:focus:required:invalid,
-body textarea:focus:required:invalid
-	color: $red-color
-	outline: none
-	box-shadow: $red-color 0 0 4px 2px
-	border-radius: 3px
-	border-color: $red-color
-body input:required:valid,
-body textarea:required:valid
-	color: $green-color
-	outline: none
-	box-shadow: $green-color 0 0 4px 2px
-	border-radius: 3px
-	border-color: $green-color
-
 .hidden
+	display: none
+
+.preloader-container
 	display: none
 
 .main
@@ -386,8 +382,8 @@ body textarea:required:valid
 	position: relative
 	width: 75%
 	height: 100px
-	margin: 25px 50px
-	padding: 30px 50px
+	margin: 25px 20px
+	padding: 30px 20px
 	border-radius: 20px
 	text-align: center
 	&:after
@@ -489,7 +485,126 @@ body textarea:required:valid
 		font-size: 18px
 		font-weight: normal
 
-.main-container__item_skills
+.skills-item
+	position: relative
+	display: inline-block
+	width: 100px
+	height: 100px
+	margin: 30px
+	border-radius: 50%
+	text-align: center
+	overflow: hidden
+	transition: all 0.5s
+	vertical-align: middle
+	&:hover
+		transform: scale(1.3)
+		transition: all 0.5s
+
+.skills-item-html
+	background-color: rgba(227, 79, 38, 0.3)
+	.skills-item__overlay
+		background-color: $html-color
+	.skills-item__percent:after
+		content: 'html'
+		color: darken($html-color, 25%)
+
+.skills-item-css
+	background-color: rgba(41, 101, 241, 0.3)
+	.skills-item__overlay
+		background-color: $css-color
+	.skills-item__percent:after
+		content: 'css'
+		color: darken($css-color, 25%)
+
+.skills-item-jquery
+	background-color: rgba(122, 206, 244, 0.3)
+	.skills-item__overlay
+		background-color: $jquery-color
+	.skills-item__percent:after
+		content: 'jquery'
+		color: darken($jquery-color, 25%)
+
+.skills-item-js
+	background-color: rgba(247, 223, 30, 0.3)
+	.skills-item__overlay
+		background-color: $js-color
+	.skills-item__percent:after
+		content: 'js'
+		color: darken($js-color, 25%)
+
+.skills-item-less
+	background-color: rgba(42, 79, 132, 0.3)
+	.skills-item__overlay
+		background-color: $less-color
+	.skills-item__percent:after
+		content: 'less'
+		color: darken($less-color, 25%)
+
+.skills-item-sass
+	background-color: rgba(205, 102, 154, 0.3)
+	.skills-item__overlay
+		background-color: $sass-color
+	.skills-item__percent:after
+		content: 'sass'
+		color: darken($sass-color, 25%)
+
+.skills-item-git
+	background-color: rgba(110, 84, 148, 0.3)
+	.skills-item__overlay
+		background-color: $git-color
+	.skills-item__percent:after
+		content: 'git'
+		color: darken($git-color, 25%)
+
+.skills-item-php
+	background-color: rgba(136, 146, 190, 0.3)
+	.skills-item__overlay
+		background-color: $php-color
+	.skills-item__percent:after
+		content: 'php'
+		color: darken($php-color, 25%)
+
+.skills-item-csharp
+	background-color: rgba(105, 0, 129, 0.3)
+	.skills-item__overlay
+		background-color: $csharp-color
+	.skills-item__percent:after
+		content: 'c#'
+		color: darken($csharp-color, 25%)
+
+.skills-item-bem
+	background-color: rgba(42, 232, 151, 0.3)
+	.skills-item__overlay
+		background-color: $bem-color
+	.skills-item__percent:after
+		content: 'bem'
+		color: darken($bem-color, 25%)
+
+.skills-item__percent
+	position: absolute
+	display: block
+	top: 50%
+	left: 50%
+	font-size: 30px
+	font-weight: bold
+	letter-spacing: 2px
+	transform: translate(-50%, -50%)
+	z-index: 9
+	&:after
+		position: absolute
+		bottom: -25px
+		left: 50%
+		font-size: 22px
+		font-weight: bold
+		transform: translate(-50%, 0)
+
+.skills-item__overlay
+	position: absolute
+	bottom: -1px
+	left: -5px
+	right: -5px
+	width: calc(100% + 10px)
+	height: 0%
 
 .main-container__item_portfolio
 
