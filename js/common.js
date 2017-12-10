@@ -2,12 +2,16 @@ $(document).ready(function() {
 	//resize function
 		function wResize() {
 			$('.main').css('height', $(window).height());
-		};
+		}
 
-		wResize();
+		if ($(window).width() >= 1280) {
+			wResize();
+		}
 
 		$(window).resize(function() {
-			wResize()
+			if ($(window).width() >= 1280) {
+				wResize();
+			}
 		});
 
 	//menu icon events
@@ -89,11 +93,18 @@ $(document).ready(function() {
 				_this.css('height', size + 'px');
 			}
 		});
+
+	$(window).on('load', function() {
+		var preloader = $('.preloader-container');
+        var spinner = preloader.find('.preloader');
+    
+    	$('.main').css('opacity', '1');
+	    spinner.css('opacity', '0');
+	});
 });
 
-// $(window).load(function() {
-// 	$(".top_header").animated("fadeInDown", "fadeOut");
-// 	$(".tabs_header .wrapper").animated("flipInY", "fadeOut");
-// 	$(".profi_right").animated("fadeInRight", "fadeOut");
-// 	$(".s_profi form").animated("zoomIn", "fadeOut");
-// });
+$(window).load(function() {
+	$('.header h2').delay(450).animated('fadeInDown', 'fadeOut');
+	$('.header h1').delay(450).animated('flipInY', 'fadeOut');
+	$('.header h3').delay(450).animated('fadeInRight', 'fadeOut');
+});
